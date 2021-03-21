@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "257509760684",
+    "project_id": "wedding-mall-application",
+    "storage_bucket": "wedding-mall-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257509760684:android:0c352e4a253061d4f5c909",
+        "android_client_info": {
+          "package_name": "com.example.weddingmallappilcation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257509760684-srge7bulbs9qrisjnspi6m8nuh0tscg7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc2xUkeg-JNpOKQl938bxtFLjTuFf4f3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257509760684-srge7bulbs9qrisjnspi6m8nuh0tscg7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
