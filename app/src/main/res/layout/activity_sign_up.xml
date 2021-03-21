@@ -31,16 +31,16 @@
         android:layout_height="48dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
+        android:layout_marginTop="444dp"
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
-        android:layout_marginBottom="14dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:inputType="textPersonName"
         android:paddingLeft="15dp"
         android:text="Password"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtemail" />
 
@@ -50,20 +50,16 @@
         android:layout_height="48dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:inputType="textPersonName"
         android:paddingLeft="15dp"
         android:text="Email"
-        app:layout_constraintBottom_toTopOf="@+id/txtpassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -100,63 +96,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="152dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:background="@drawable/custom_input"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/txtemail"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3">
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Male" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Female" />
-    </RadioGroup>
-
     <EditText
         android:id="@+id/editTextNumber"
         android:layout_width="155dp"
         android:layout_height="53dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:inputType="number"
         android:paddingLeft="15dp"
         android:text="Age"
-        app:layout_constraintBottom_toTopOf="@+id/txtemail"
-        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
-        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
 
     <Button
         android:id="@+id/btnSignUp"
         android:layout_width="331dp"
         android:layout_height="54dp"
-        android:layout_marginTop="17dp"
         android:background="@drawable/login_button"
         android:text="SignUp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtpassword" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView10"

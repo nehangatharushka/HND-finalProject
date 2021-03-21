@@ -48,44 +48,19 @@ public class signUp extends AppCompatActivity {
 
         mAuth=FirebaseAuth.getInstance();
 
-        signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+       signUp.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
 
-                createUser();
-
-            }
-        });
+           }
+       });
 
     }
 
-    private void createUser(){
-        String email=txtemail.getText().toString();
-        String password=txtpassword.getText().toString();
 
-        if (! email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            if (! password.isEmpty()){
-                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(signUp.this, "Registered successfully....", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(signUp.this, "Error", Toast.LENGTH_SHORT).show();
-                    }
-                });
 
-            }else {
-                txtpassword.setError("empty field are bnotallowed");
-            }
-        }else if(email.isEmpty()){
-            txtemail.setError("empty field are not allowed");
-        }else{
-            txtemail.setError("please enter correct email");
-        }
-    }
+
+
    private void afterClickSignUp() {
         Intent intent = new Intent(this,login.class);
         startActivity(intent);
