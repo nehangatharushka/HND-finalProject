@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class signUp extends AppCompatActivity {
 
-    private Button btnHaveAcc , signUp;
+    private Button btnHaveAcc , signUp , login , login1;
 
     private EditText txtemail,txtpassword;
     private FirebaseAuth mAuth;
