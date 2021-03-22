@@ -16,12 +16,13 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class signUp extends AppCompatActivity {
 
-    private Button btnHaveAcc , signUp ;
+    private Button btnHaveAcc ,signUp ;
 
-    private EditText txtemail,txtpassword;
+    private EditText txtemail,txtpassword,txtfname,txtlname,txtage;
     private FirebaseAuth mAuth;
 
 
@@ -32,6 +33,9 @@ public class signUp extends AppCompatActivity {
 
         txtemail=findViewById(R.id.txtemail);
         txtpassword=findViewById(R.id.txtpassword);
+        txtfname=findViewById(R.id.txtfname);
+        txtlname=findViewById(R.id.txtlname);
+        txtage=findViewById(R.id.txtage);
 
 
         btnHaveAcc=(Button)findViewById(R.id.btnHaveAcc);
@@ -52,10 +56,86 @@ public class signUp extends AppCompatActivity {
            @Override
            public void onClick(View v) {
 
+               registerUser();
+
            }
        });
 
     }
+
+    private void registerUser(){
+        final String email=txtemail.getText().toString().trim();
+        String password=txtpassword.getText().toString().trim();
+        final String firstname=txtfname.getText().toString().trim();
+        final String lastname=txtlname.getText().toString().trim();
+        final String age=txtage.getText().toString().trim();
+
+        if (firstname.isEmpty()){
+            txtfname.setError("First Name is Required");
+            txtfname.requestFocus();
+            return;
+        }
+        if (lastname.isEmpty()){
+            txtlname.setError("Last Name is Required");
+            txtlname.requestFocus();
+            return;
+        }
+        if (age.isEmpty()){
+            txtage.setError("Age is Required");
+            txtage.requestFocus();
+            return;
+        }
+        if (email.isEmpty()){
+            txtemail.setError("Email is Required");
+            txtemail.requestFocus();
+            return;
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            txtemail.setError("Please provide valid email");
+            txtemail.requestFocus();
+            return;
+        }
+        if (password.isEmpty()){
+            txtpassword.setError("Password is Required");
+            txtpassword.requestFocus();
+            return;
+        }
+        if (password.length() < 6){
+            txtpassword.setError("Password lenght should be more than 6 characters");
+            txtpassword.requestFocus();
+            return;
+        }
+
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            User user=new User(firstname,lastname,age,email);
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()){
+                                        Toast.makeText(signUp.this, "Register Success", Toast.LENGTH_SHORT).show();
+                                    }else{
+                                        Toast.makeText(signUp.this, "Failed to register", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+
+
+
+                        }else{
+                            Toast.makeText(signUp.this, "Failed to register", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
+    }
+
+
 
 
 

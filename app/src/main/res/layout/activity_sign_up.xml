@@ -62,7 +62,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/txtfname"
         android:layout_width="331dp"
         android:layout_height="48dp"
         android:layout_marginStart="28dp"
@@ -75,14 +75,14 @@
         android:inputType="textPersonName"
         android:paddingLeft="15dp"
         android:text="First Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
+        app:layout_constraintBottom_toTopOf="@+id/txtlname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/txtlname"
         android:layout_width="331dp"
         android:layout_height="48dp"
         android:layout_marginTop="156dp"
@@ -97,7 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/txtage"
         android:layout_width="155dp"
         android:layout_height="53dp"
         android:layout_marginStart="28dp"
@@ -109,7 +109,7 @@
         android:paddingLeft="15dp"
         android:text="Age"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtlname" />
 
     <Button
         android:id="@+id/btnSignUp"
@@ -117,7 +117,7 @@
         android:layout_height="54dp"
         android:background="@drawable/login_button"
         android:text="SignUp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtfname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,7 +149,7 @@
         android:text="Sign Up To Success Your Dream"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtfname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10" />
