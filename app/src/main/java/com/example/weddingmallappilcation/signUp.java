@@ -65,7 +65,7 @@ public class signUp extends AppCompatActivity {
 
     private void registerUser(){
         final String email=txtemail.getText().toString().trim();
-        String password=txtpassword.getText().toString().trim();
+        final String password=txtpassword.getText().toString().trim();
         final String firstname=txtfname.getText().toString().trim();
         final String lastname=txtlname.getText().toString().trim();
         final String age=txtage.getText().toString().trim();
@@ -111,14 +111,14 @@ public class signUp extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            User user=new User(firstname,lastname,age,email);
+                            User user=new User(firstname,lastname,age,email,password);
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
-                                        Toast.makeText(signUp.this, "Register Success", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(signUp.this, "Register Successfully", Toast.LENGTH_SHORT).show();
                                     }else{
                                         Toast.makeText(signUp.this, "Failed to register", Toast.LENGTH_SHORT).show();
                                     }
