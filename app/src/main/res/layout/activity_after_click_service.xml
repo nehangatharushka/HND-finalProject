@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="408dp"
+        android:layout_width="wrap_content"
         android:layout_height="172dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,14 +17,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.072"
-        app:srcCompat="@drawable/_7b4cef02b80fa654a55ca585bceff6f" />
+        app:srcCompat="@drawable/digital" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="415dp"
         android:layout_height="56dp"
         android:layout_marginTop="8dp"
-        android:text="Topic"
+        android:paddingLeft="100dp"
+        android:paddingTop="15dp"
+        android:text="Rukmantha Photography"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -40,7 +42,11 @@
         android:layout_width="407dp"
         android:layout_height="424dp"
         android:layout_marginTop="4dp"
-        android:text="Description"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:text="Photography is the art, application, and practice of creating durable images by recording light, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film. It is employed in many fields of science, manufacturing (e.g., photolithography), and business, as well as its more direct uses for art, film and video production, recreational purposes, hobby, and mass communication"
+        android:textColor="#070707"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -56,6 +62,7 @@
         android:layout_marginLeft="32dp"
         android:background="@drawable/login_button"
         android:text="Call Now"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button10"
         app:layout_constraintHorizontal_bias="0.0"
@@ -73,6 +80,7 @@
         android:layout_marginRight="28dp"
         android:background="@drawable/login_button"
         android:text="Book Now"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button9"
