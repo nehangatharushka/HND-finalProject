@@ -200,14 +200,16 @@
                 android:layout_width="192dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/band" />
+                android:backgroundTint="@color/blueSky"
+                app:srcCompat="@drawable/dj" />
 
             <ImageButton
                 android:id="@+id/imageButton5"
                 android:layout_width="199dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/camera" />
+                android:backgroundTint="@color/blueSky"
+                app:srcCompat="@drawable/carrental" />
         </LinearLayout>
 
         <LinearLayout
@@ -221,7 +223,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="DJ"
                 android:textColor="#000000"
                 android:textStyle="bold" />
 
@@ -231,7 +233,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Car Rent"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </LinearLayout>
