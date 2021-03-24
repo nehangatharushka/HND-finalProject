@@ -1,19 +1,12 @@
 package com.example.weddingmallappilcation;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toolbar;
 
-import com.google.android.material.navigation.NavigationView;
-
-import org.w3c.dom.Text;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void afterClickSignUp() {
-       /* Intent intent = new Intent(this,signUp.class);
-        startActivity(intent);*/
+       Intent intent = new Intent(this,signUp.class);
+        startActivity(intent);
     }
 
     public void afterClick()
     {
-        Intent intent = new Intent(this,signUp.class);
+        Intent intent = new Intent(this,login.class);
         startActivity(intent);
     }
 }

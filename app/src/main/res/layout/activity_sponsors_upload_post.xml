@@ -13,11 +13,10 @@
         android:layout_height="245dp"
         android:scaleType="fitXY"
         android:src="@drawable/weddingbanner"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inputImageName"
-        app:layout_constraintVertical_bias="0.24" />
+        tools:layout_editor_absoluteY="58dp" />
 
     <EditText
         android:id="@+id/inputImageName"
@@ -27,8 +26,8 @@
         android:hint="Enter Image Name..."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091"
-        tools:layout_editor_absoluteX="-80dp" />
+        app:layout_constraintVertical_bias="0.499"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/textViewProgress"
@@ -64,11 +63,20 @@
         android:layout_height="58dp"
         android:layout_below="@+id/progressBar"
         android:text="Upload"
+        android:background="@drawable/login_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/inputImageName"
         app:layout_constraintVertical_bias="0.901" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        app:srcCompat="@drawable/download"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="5dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

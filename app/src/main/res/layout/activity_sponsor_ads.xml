@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".SponsorAds">
 
+
+
     <EditText
         android:id="@+id/inputSearch"
         android:layout_width="320dp"
