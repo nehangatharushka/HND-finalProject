@@ -116,17 +116,18 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/rooktext"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:paddingLeft="10dp"
             android:text="Rookmantha Photography"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds" />
 
         <TextView
-            android:id="@+id/textView29"
+            android:id="@+id/rookName"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:paddingLeft="10dp"
@@ -135,7 +136,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/textView30"
+            android:id="@+id/rookAddress"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:paddingLeft="10dp"
@@ -144,7 +145,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/textView31"
+            android:id="@+id/rookPhn"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:paddingLeft="10dp"
@@ -161,13 +162,13 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toEndOf="@+id/imageButton2"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-        app:layout_constraintVertical_bias="0.18">
+        app:layout_constraintVertical_bias="0.091">
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/service_1"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:paddingLeft="10dp"
