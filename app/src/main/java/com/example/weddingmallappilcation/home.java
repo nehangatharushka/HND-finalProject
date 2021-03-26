@@ -1,16 +1,23 @@
 package com.example.weddingmallappilcation;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
+import android.view.MenuItem;
+import android.widget.FrameLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class home extends AppCompatActivity {
 
-//    Button postAdd , add2;
-    ImageView newsfeed ,sponsor ,accInfo ,category_1;
+    private BottomNavigationView mMainNav;
+    private FrameLayout mframe;
+    private HomeFragment homeFragment;
+    private NewsFeedFragment newsFeedFragment;
+    private AccountFragment accountFragment;
 
 
     @Override
@@ -18,111 +25,50 @@ public class home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-//        postAdd=findViewById(R.id.postAddBtn);
-        newsfeed=findViewById(R.id.imgnewsfeed);
-        sponsor=findViewById(R.id.imgSponsered);
-//        chat=findViewById(R.id.imgChat);
-        accInfo=findViewById(R.id.imgAccinfo);
-        category_1=findViewById(R.id.imgviewCamera);
+        mMainNav=findViewById(R.id.main_nav);
+        mframe=findViewById(R.id.main_frame);
 
-//        postAdd.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                clickplusbtn();
-//            }
-//        });
-//
-        newsfeed.setOnClickListener(new View.OnClickListener() {
+        homeFragment=new HomeFragment();
+        newsFeedFragment=new NewsFeedFragment();
+        accountFragment=new AccountFragment();
+
+        setFragment(homeFragment);
+
+        mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                clickNewsFeed();
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.home_nav:
+                        mMainNav.setItemBackgroundResource(R.color.white);
+                        setFragment(homeFragment);
+                        return true;
+
+                    case R.id.newsFeed_nav:
+                    mMainNav.setItemBackgroundResource(R.color.white);
+                        setFragment(newsFeedFragment);
+                    return true;
+
+                    case R.id.account_nav:
+                    mMainNav.setItemBackgroundResource(R.color.white);
+                        setFragment(accountFragment);
+                    return true;
+
+                    default:
+                        return false;
+                }
             }
         });
-//
-        sponsor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clicksponserFeed();
-            }
-        });
-
-        category_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCategoryOne();
-            }
-        });
-//        chat.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                clickChat();
-//            }
-//        });
-//
-        accInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickAccInfo();
-            }
-        });
-//
-//
-//        add2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                click();
-//            }
-//        });
 
     }
 
-    private void clickCategoryOne() {
-        Intent intent = new Intent(this,afterClickCategory.class);
-        startActivity(intent);
+    private void setFragment(Fragment fragment) {
+
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.main_frame,fragment);
+        fragmentTransaction.commit();
+
+
     }
 
-    private void clickAccInfo() {
-        Intent intent = new Intent(this,AccInfo.class);
-        startActivity(intent);
-    }
 
-    private void clicksponserFeed() {
-        Intent intent = new Intent(this,SponsorsHome.class);
-        startActivity(intent);
-    }
-
-    private void clickNewsFeed() {
-        Intent intent = new Intent(this,newsFeed.class);
-        startActivity(intent);
-    }
-
-//    private void clickAccInfo() {
-//        Intent intent = new Intent(this,SponsorsHome.class);
-//        startActivity(intent);
-//    }
-//
-//    private void clickChat() {
-//        Intent intent = new Intent(this,SponsorsHome.class);
-//        startActivity(intent);
-//    }
-//
-//    private void clicksponserFeed() {
-//        Intent intent = new Intent(this,SponsorsHome.class);
-//        startActivity(intent);
-//    }
-//
-//    private void clickNewsFeed() {
-//        Intent intent = new Intent(this,newsFeed.class);
-//        startActivity(intent);
-//    }
-//
-//    private void click() {
-//        Intent intent = new Intent(this,ProfileActivity.class);
-//        startActivity(intent);
-//    }
-//
-//    private void clickplusbtn() {
-//        Intent intent = new Intent(this,newsFeed.class);
-//        startActivity(intent);
-//    }
 }
