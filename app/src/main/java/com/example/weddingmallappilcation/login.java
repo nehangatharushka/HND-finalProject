@@ -18,8 +18,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class login extends AppCompatActivity {
 
-    private Button signIn , createAcc;
-    private EditText editTextEmail,editTextPassword;
+    private Button signIn, createAcc;
+    private EditText editTextEmail, editTextPassword;
     private FirebaseAuth mAuth;
 
     @Override
@@ -27,19 +27,19 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        editTextEmail=(EditText)findViewById(R.id.textemail);
-        editTextPassword=(EditText)findViewById(R.id.textpw);
+        editTextEmail = (EditText) findViewById(R.id.textemail);
+        editTextPassword = (EditText) findViewById(R.id.textpw);
 
-        signIn=(Button)findViewById(R.id.btnLogin);
-        createAcc=(Button)findViewById(R.id.btncreateAcc);
+        signIn = (Button) findViewById(R.id.btnLogin);
+        createAcc = (Button) findViewById(R.id.btncreateAcc);
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               userLogin();
+                userLogin();
             }
         });
-        mAuth=FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         createAcc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,11 +51,11 @@ public class login extends AppCompatActivity {
 
     }
 
-    private void userLogin(){
-        String email=editTextEmail.getText().toString().trim();
-        String password=editTextPassword.getText().toString().trim();
+    private void userLogin() {
+        String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
 
-        if (email.isEmpty()){
+        if (email.isEmpty()) {
             editTextEmail.setError("Email is Required");
             editTextEmail.requestFocus();
             return;
@@ -65,35 +65,32 @@ public class login extends AppCompatActivity {
             editTextEmail.requestFocus();
             return;
         }*/
-        if (password.isEmpty()){
+        if (password.isEmpty()) {
             editTextPassword.setError("Password is Required");
             editTextPassword.requestFocus();
             return;
         }
-        if (password.length() <6){
+        if (password.length() < 6) {
             editTextPassword.setError("Password should be minimun 6 characters");
             editTextPassword.requestFocus();
             return;
         }
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-                    if (user.isEmailVerified()){
-
-
+                if (task.isSuccessful()) {
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    if (user.isEmailVerified()) {
 
                         startActivity(new Intent(login.this, home.class));
 
-                    }else{
+                    } else {
                         user.sendEmailVerification();
-                        Toast.makeText(login.this, "Check your email to verify you7r account", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(login.this, "Check your email to verify your account", Toast.LENGTH_SHORT).show();
                     }
 
 
-
-                }else{
+                } else {
                     Toast.makeText(login.this, "Failed to Login", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -101,10 +98,9 @@ public class login extends AppCompatActivity {
     }
 
     private void afterClickCreateAccount() {
-        Intent intent = new Intent(this,signUp.class);
+        Intent intent = new Intent(this, signUp.class);
         startActivity(intent);
     }
 
 
-
-    }
+}

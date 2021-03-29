@@ -4,79 +4,178 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightGrey"
     tools:context=".SponsorsUploadPost">
 
 
-    <ImageView
-        android:id="@+id/imageVIewAdd"
-        android:layout_width="343dp"
-        android:layout_height="245dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/weddingbanner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.588"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="58dp" />
-
-    <EditText
-        android:id="@+id/inputImageName"
+    <View
+        android:id="@+id/view7"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageVIewAdd"
-        android:hint="Enter Image Name..."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/blueSky"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewProgress"
-        android:layout_width="250dp"
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/inputImageName"
-        android:gravity="center"
-        android:text="0.0 %"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        android:text="Post your ad"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageVIewAdd"
+        app:layout_constraintEnd_toEndOf="@+id/view7"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.768" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewProgress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.682" />
-
-    <Button
-        android:id="@+id/btnUpload"
-        android:layout_width="331dp"
-        android:layout_height="58dp"
-        android:layout_below="@+id/progressBar"
-        android:text="Upload"
-        android:background="@drawable/login_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inputImageName"
-        app:layout_constraintVertical_bias="0.901" />
+        app:layout_constraintVertical_bias="0.307" />
 
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="40dp"
         android:layout_height="35dp"
-        app:srcCompat="@drawable/download"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="5dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/view7"
+        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view7"
+        app:layout_constraintVertical_bias="0.333"
+        app:srcCompat="@drawable/back" />
+
+    <ImageView
+        android:id="@+id/imageVIewAdd"
+        android:layout_width="153dp"
+        android:layout_height="119dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/weddingbanner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view7"
+        app:layout_constraintVertical_bias="0.029"
+        app:srcCompat="@drawable/add_photo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="414dp"
+        android:layout_height="547dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Spinner
+            android:id="@+id/category"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            />
+
+        <TextView
+            android:id="@+id/txtCategory"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="Select Category"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/inputImageName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/imageVIewAdd"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/custom_input"
+            android:gravity="center"
+            android:hint="Advertistment Name"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/des"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@+id/imageVIewAdd"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/custom_input"
+            android:gravity="center_horizontal"
+            android:hint="Description"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/btnUpload"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/progressBar"
+            android:layout_gravity="center"
+            android:background="@drawable/login_button"
+            android:text="Upload"
+            android:textColor="@color/white" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewProgress"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/textViewProgress"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/inputImageName"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="0.0 %"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="166dp"
+        android:layout_height="25dp"
+        android:text="Click to add photo"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageVIewAdd"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="166dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="4dp"
+        android:text="Ad details:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.004"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageVIewAdd"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

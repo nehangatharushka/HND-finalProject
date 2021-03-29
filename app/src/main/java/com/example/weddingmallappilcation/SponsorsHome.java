@@ -26,7 +26,6 @@ public class SponsorsHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sponsors_home);
 
-
 //        Dataref= FirebaseDatabase.getInstance().getReference().child("Car");
 //        inputSearch=findViewById(R.id.inputSearch);
 //        recyclerView=findViewById(R.id.recylerView);
