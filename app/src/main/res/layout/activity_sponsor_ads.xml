@@ -27,80 +27,27 @@
         android:drawableRight="@drawable/ic_baseline_search"
         android:paddingRight="10dp"/>
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="290dp"
-        android:layout_height="122dp"
+    <androidx.recyclerview.widget.RecyclerView
 
+        android:id="@+id/recylerview"
+        android:layout_width="437dp"
+        android:layout_height="519dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.221"
-        app:srcCompat="@drawable/asd" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="290dp"
-        android:layout_height="122dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.726"
-        app:srcCompat="@drawable/ee86ca66deadea19ba2fab646f15c5d4_screen"
-        tools:src="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/textView14"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The Wedding Show August "
-        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_baseline_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.414" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My Wedding Exhibition - 2020"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.258"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="278dp"
-        android:layout_height="50dp"
-        android:text=" Aug 22, 2020 - Aug 23, 2020  BMICH - New Assembly Hall, Colombo, Sri Lanka, Colombo, Sri Lanka"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.483" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="278dp"
-        android:layout_height="50dp"
-        android:text="Jan 24, 2020 - Jan 26, 2020  Bandaranaike Memorial International Conference Hall, Colombo, Sri Lanka, Colombo, Sri Lanka"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.443"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947" />
+        app:layout_constraintVertical_bias="0.883" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

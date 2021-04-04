@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".staysafe">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="285dp">
+
+        <View
+            android:id="@+id/viewstay"
+            android:layout_width="wrap_content"
+            android:background="@color/blueSky"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/staysafe"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@color/blueSky"
+            android:gravity="center"
+            android:text="Stay Safe"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/backbtnhelp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/back" />
+
+        <TextView
+            android:id="@+id/titlestaysafe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="70dp"
+            android:text="Wedding Mall.com"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/desstaysafe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="270dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:text="Secure your devices: Use strong passphrases, passcodes or other features such as touch identification to lock your devices. Securing your device can help protect your information if your device is lost or stolen and keep prying eyes out. Personal information is like money – Value it. Protect it.: Information about you, such as the games you like to play, what you search for online and where you shop and live, has value – just like money. Be thoughtful about who gets that information and how it’s collected through apps and websites. Own your online presence: Use security and privacy settings on websites and apps to manage what is shared about you and who sees it. Now you see me, now you don’t: Some stores and other locations look for devices with WiFi or Bluetooth turned on to track your movements while you are within range. Disable WiFi and Bluetooth when not in use."
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/btnstaysafelogo"
+            android:layout_width="143dp"
+            android:layout_height="142dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="110dp"
+            android:background="@drawable/nav_logo" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

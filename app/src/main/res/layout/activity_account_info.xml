@@ -29,9 +29,8 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        android:background="@color/blueSky"
-        android:foreground="@drawable/download"
-        android:src="@drawable/download" />
+        android:background="@drawable/back"
+        />
 
     <TextView
         android:id="@+id/textView7"
@@ -103,7 +102,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:paddingLeft="15dp"
-            android:text="Age" />
+            android:text="Username" />
 
         <EditText
             android:id="@+id/txtEmail"

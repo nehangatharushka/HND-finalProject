@@ -62,7 +62,7 @@
                 android:text="My Ads" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btnhelp"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
@@ -86,7 +86,7 @@
                 android:text="Chat" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/btnaboutUs"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
@@ -98,7 +98,7 @@
                 android:text="About Us" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/btnstaySafe"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
