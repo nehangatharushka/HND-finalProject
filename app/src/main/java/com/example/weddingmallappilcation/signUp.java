@@ -1,11 +1,14 @@
 package com.example.weddingmallappilcation;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,14 +18,22 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class signUp extends AppCompatActivity {
 
-    private Button btnHaveAcc ,signUp ;
 
-    private EditText txtemail,txtpassword,txtfname,txtlname,txtage;
-    private FirebaseAuth mAuth;
+
+    EditText uname,fname,lname,email,password;
+    TextView login;
+    Button register,btnHaveAcc;
+    FirebaseAuth auth;
+    DatabaseReference reference;
+    ProgressDialog pd;
 
 
     @Override
@@ -30,11 +41,11 @@ public class signUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        txtemail=findViewById(R.id.txtemail);
-        txtpassword=findViewById(R.id.txtpassword);
-        txtfname=findViewById(R.id.txtfname);
-        txtlname=findViewById(R.id.txtlname);
-        txtage=findViewById(R.id.txtage);
+        email=findViewById(R.id.txtemail);
+        password=findViewById(R.id.txtpassword);
+        fname=findViewById(R.id.txtfname);
+        lname=findViewById(R.id.txtlname);
+        uname=findViewById(R.id.edtuname);
 
 
         btnHaveAcc=(Button)findViewById(R.id.btnHaveAcc);
@@ -47,87 +58,73 @@ public class signUp extends AppCompatActivity {
             }
         });
 
-        signUp=findViewById(R.id.btnSignUp);
+        register=findViewById(R.id.btnSignUp);
 
-        mAuth=FirebaseAuth.getInstance();
+        auth=FirebaseAuth.getInstance();
 
-       signUp.setOnClickListener(new View.OnClickListener() {
+       register.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
 
-               registerUser();
+               pd=new ProgressDialog(signUp.this);
+               pd.setMessage("Please wait......");
+               pd.show();
+
+               String username=uname.getText().toString();
+               String frname=fname.getText().toString();
+               String lsname=lname.getText().toString();
+               String emailaddress=email.getText().toString();
+               String pw=password.getText().toString();
+
+               if (TextUtils.isEmpty(username) || TextUtils.isEmpty(frname)  || TextUtils.isEmpty(lsname) || TextUtils.isEmpty(emailaddress) || TextUtils.isEmpty(pw))
+               {
+                   Toast.makeText(signUp.this, "All field are required...", Toast.LENGTH_SHORT).show();
+               }else if (pw.length() < 6){
+                   Toast.makeText(signUp.this, "Pw must have 6 characters...", Toast.LENGTH_SHORT).show();
+               }else {
+                   register(username,frname,lsname,emailaddress,pw);
+
+
+               }
 
            }
        });
 
     }
 
-    private void registerUser(){
-        final String email=txtemail.getText().toString().trim();
-        final String password=txtpassword.getText().toString().trim();
-        final String firstname=txtfname.getText().toString().trim();
-        final String lastname=txtlname.getText().toString().trim();
-        final String age=txtage.getText().toString().trim();
-
-        if (firstname.isEmpty()){
-            txtfname.setError("First Name is Required");
-            txtfname.requestFocus();
-            return;
-        }
-        if (lastname.isEmpty()){
-            txtlname.setError("Last Name is Required");
-            txtlname.requestFocus();
-            return;
-        }
-        if (age.isEmpty()){
-            txtage.setError("Age is Required");
-            txtage.requestFocus();
-            return;
-        }
-        if (email.isEmpty()){
-            txtemail.setError("Email is Required");
-            txtemail.requestFocus();
-            return;
-        }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            txtemail.setError("Please provide valid email");
-            txtemail.requestFocus();
-            return;
-        }
-        if (password.isEmpty()){
-            txtpassword.setError("Password is Required");
-            txtpassword.requestFocus();
-            return;
-        }
-        if (password.length() < 6){
-            txtpassword.setError("Password lenght should be more than 6 characters");
-            txtpassword.requestFocus();
-            return;
-        }
-
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    private void register(final String username, final String fname, final String lname, String emailaddress, String pw){
+        auth.createUserWithEmailAndPassword(emailaddress,pw)
+                .addOnCompleteListener(signUp.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            User user=new User(firstname,lastname,age,email,password);
-                            FirebaseDatabase.getInstance().getReference("Users").child("User_Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        if(task.isSuccessful()){
+                            FirebaseUser firebaseUser=auth.getCurrentUser();
+                            String userid=firebaseUser.getUid();
+                            reference= FirebaseDatabase.getInstance().getReference().child("Users").child(userid);
+
+                            HashMap<String, Object> hashMap=new HashMap<>();
+                            hashMap.put("id", userid);
+                            hashMap.put("username", username.toLowerCase());
+                            hashMap.put("firstname", fname);
+                            hashMap.put("lastname", lname);
+                            hashMap.put("bio", "");
+                            hashMap.put("imageUrl", "gs://wedding-mall-application.appspot.com/user-avatar-png-images-vector-and-psd-files-free-download-on-male-png-360_360.png");
+
+                            reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
-                                        Toast.makeText(signUp.this, "Register Successfully", Toast.LENGTH_SHORT).show();
-                                    }else{
-                                        Toast.makeText(signUp.this, "Failed to register", Toast.LENGTH_SHORT).show();
+                                        pd.dismiss();
+                                        Intent intent=new Intent(signUp.this,login.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        startActivity(intent);
                                     }
                                 }
                             });
 
-
-
-                        }else{
-                            Toast.makeText(signUp.this, "Failed to register", Toast.LENGTH_SHORT).show();
-
+                        }else {
+                            pd.dismiss();
+                            Toast.makeText(signUp.this, "You can't register", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

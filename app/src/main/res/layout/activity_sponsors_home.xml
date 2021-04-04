@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/lightGrey"
+    android:background="#fff"
     android:layout_height="match_parent"
     tools:context=".SponsorsHome">
 
@@ -11,12 +11,11 @@
         android:id="@+id/imageView18"
         android:layout_width="36dp"
         android:layout_height="56dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="11dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView14"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.833"
         app:layout_constraintStart_toEndOf="@+id/inputSearch"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/filter" />
@@ -31,9 +30,9 @@
         android:layout_marginEnd="283dp"
         android:layout_marginRight="283dp"
         android:layout_marginBottom="8dp"
-        android:text="Advertistment"
+        android:text="Sponsors"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,10 +56,10 @@
         android:paddingBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/floatingbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04000002" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <View
         android:id="@+id/view"
@@ -168,32 +167,69 @@
         app:layout_constraintVertical_bias="0.922" />
 
     <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="413dp"
-        android:layout_height="179dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView17"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputSearch"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/images" />
-
-    <ImageView
         android:id="@+id/imageView17"
-        android:layout_width="416dp"
-        android:layout_height="173dp"
-        android:layout_marginTop="224dp"
-        android:layout_marginBottom="166dp"
-        app:layout_constraintBottom_toTopOf="@+id/floatingbtn"
+        android:layout_width="339dp"
+        android:layout_height="159dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputSearch"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.262"
         app:srcCompat="@drawable/weddg" />
 
+
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Wedding Exhibition - 2020"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.257"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.479" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Wedding Exhibition - 2020"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.321"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.876" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="309dp"
+        android:layout_height="140dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.786"
+        app:srcCompat="@drawable/asd" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="278dp"
+        android:layout_height="50dp"
+        android:text="Jan 24, 2020 - Jan 26, 2020  Bandaranaike Memorial International Conference Hall, Colombo, Sri Lanka, Colombo, Sri Lanka"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.556" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

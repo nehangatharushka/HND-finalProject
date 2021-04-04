@@ -55,16 +55,17 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
+        android:layout_marginBottom="196dp"
         android:background="@drawable/custom_input"
         android:ems="10"
+        android:hint="Email Address"
         android:inputType="textPersonName"
         android:paddingLeft="15dp"
-        android:hint="Email Address"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtage"
+        app:layout_constraintTop_toBottomOf="@+id/edtuname"
         app:layout_constraintVertical_bias="0.043" />
 
     <EditText
@@ -104,26 +105,22 @@
         app:layout_constraintTop_toBottomOf="@+id/txtfname"
         app:layout_constraintVertical_bias="0.04" />
 
+
     <EditText
-        android:id="@+id/txtage"
-        android:layout_width="155dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="228dp"
-        android:layout_marginRight="228dp"
+        android:id="@+id/edtuname"
+        android:layout_width="242dp"
+        android:layout_height="54dp"
         android:background="@drawable/custom_input"
         android:ems="10"
-        android:inputType="number"
+        android:hint="User Name"
+        android:inputType="textPersonName"
         android:paddingLeft="15dp"
-        android:hint="Age"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.171"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtlname"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/txtfname"
+        app:layout_constraintVertical_bias="0.243" />
 
     <Button
         android:id="@+id/btnSignUp"

@@ -18,7 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".afterClickCategory"></activity>
+        <activity android:name=".newsfeed"></activity>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat"/>
+        <activity android:name=".PostActivity" />
+        <activity android:name=".Ads_view" />
+        <activity android:name=".afterClickCategory" />
         <activity android:name=".category" />
         <activity android:name=".myAds" />
         <activity android:name=".account" />
@@ -36,11 +41,11 @@
         <activity android:name=".signUp" />
         <activity android:name=".login" />
         <activity android:name=".MainActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
